@@ -59,12 +59,12 @@
             databaseQuery = JSON.parse(responseText);
         }
                let currentTime = `<div class='col-sm-1 font-weight-bold'>Id:</div>
-<div>Current Time:${databaseQuery.currentTimeQueryId}</div>
-<div>IP Address:${ databaseQuery.clientIp }</div>
-<div>Time:${ databaseQuery.time}</div>
-<div>${databaseQuery.timeZoneInfoId != null ? databaseQuery.timeZoneInfoId : "Not Found"} </div>
-<div>UTC Time:${databaseQuery.utcTime} </div>
-`;
+                                <div>Current Time:${databaseQuery.currentTimeQueryId}</div>
+                                <div>IP Address:${ databaseQuery.clientIp }</div>
+                                <div>Time:${ databaseQuery.time}</div>
+                                  <div>${databaseQuery.zoneId != null ? databaseQuery.zoneId : "Not Found"} </div>
+                                <div>UTC Time:${databaseQuery.utcTime} </div>
+                                `;
         return currentTime;
     }
     function DisplayAllRequests(responseText) {
