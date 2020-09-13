@@ -44,7 +44,7 @@ namespace Clockwork.API.Controllers
                 /*foreach (var CurrentTimeQuery in db.CurrentTimeQueries)
                 {
                     Console.WriteLine(" - {0}", CurrentTimeQuery.UTCTime);
-                }*
+                }*/
             }
 
             return Ok(returnVal);
