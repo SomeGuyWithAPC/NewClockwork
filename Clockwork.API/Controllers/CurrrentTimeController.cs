@@ -40,10 +40,11 @@ namespace Clockwork.API.Controllers
                 Console.WriteLine("{0} records saved to database", count);
 
                 Console.WriteLine();
-                foreach (var CurrentTimeQuery in db.CurrentTimeQueries)
+                //added for testing and removed
+                /*foreach (var CurrentTimeQuery in db.CurrentTimeQueries)
                 {
                     Console.WriteLine(" - {0}", CurrentTimeQuery.UTCTime);
-                }
+                }*
             }
 
             return Ok(returnVal);
