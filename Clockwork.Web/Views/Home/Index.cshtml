@@ -58,6 +58,8 @@
         else {
             databaseQuery = JSON.parse(responseText);
         }
+                let utcDateForm = new Date(databaseQuery.utcTime).toUTCString();
+                let currentDateForm = new Date(databaseQuery.time).toLocaleTimeString();
                let currentTime = `<div class='col-sm-1 font-weight-bold'>Id:</div>
                                 <div>Current Time:${databaseQuery.currentTimeQueryId}</div>
                                 <div>IP Address:${ databaseQuery.clientIp }</div>
