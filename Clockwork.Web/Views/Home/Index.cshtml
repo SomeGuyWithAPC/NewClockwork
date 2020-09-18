@@ -98,24 +98,20 @@
     </div>
 
     <br />
-    <div id="databaseQuery"></div>
+  
 
-    <div class="accordion" id="accordion-results">
+  <div class="accordion" id="accordion-results">
         <div class="card">
-            <div class="card-header" id="heading-results">
-                <h3 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-results" aria-expanded="false" aria-controls="collapse-results">
-                        Previous Entries
-                    </button>
-                </h3>
-            </div>
-
-            <div id="collapse-results" class="collapse" aria-labelledby="heading-results" data-parent="#accordion-results">
-                <div class="card-body">
-                    <div id="requestLogs"></div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Previous Entries</button>
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div id="requestLogs"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
