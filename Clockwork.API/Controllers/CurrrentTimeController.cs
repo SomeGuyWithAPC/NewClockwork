@@ -32,24 +32,25 @@ namespace Clockwork.API.Controllers
                     : TimeZoneInfo.ConvertTimeFromUtc(utcTime, requestedTimeZone),
                 ZoneId = zoneId
             };
-
-            using (var db = new ClockworkContext())
+             //List<string> TimeQuery = new List<string>();
+             using (var db = new ClockworkContext())
             {
                 db.CurrentTimeQueries.Add(returnVal);
                 var count = db.SaveChanges();
                 Console.WriteLine("{0} records saved to database", count);
 
                 Console.WriteLine();
-                //added for testing and removed
-                /*foreach (var CurrentTimeQuery in db.CurrentTimeQueries)
+                foreach (var CurrentTimeQuery in db.CurrentTimeQueries)
                 {
-                    Console.WriteLine(" - {0}", CurrentTimeQuery.UTCTime);
-                }*/
+                   Console.WriteLine($" - {CurrentTimeQuery.UTCTime}");
+                   
+                    //TimeQuery.Add(CurrentTimeQuery.UTCTime.ToString());
+                }
+                
             }
-
             return Ok(returnVal);
-        }
 
+        }
         [HttpGet("all")]
         public IActionResult GetAll()
         {
