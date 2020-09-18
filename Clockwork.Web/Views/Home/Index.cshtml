@@ -60,12 +60,25 @@
         }
                 let utcDateForm = new Date(databaseQuery.utcTime).toUTCString();
                 let currentDateForm = new Date(databaseQuery.time).toLocaleTimeString();
-               let currentTime = `<div class='col-sm-1 font-weight-bold'>Id:</div>
-                                <div>Current Time:${databaseQuery.currentTimeQueryId}</div>
-                                <div>IP Address:${ databaseQuery.clientIp }</div>
-                                <div>Time:${ databaseQuery.time}</div>
-                                  <div>${databaseQuery.zoneId != null ? databaseQuery.zoneId : "Not Found"} </div>
-                                <div>UTC Time:${databaseQuery.utcTime} </div>
+               let currentTime = `<table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>IPAddress</th>
+        <th>Time</th>
+        <th>Zone</th>
+        <th>UTC Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>${databaseQuery.currentTimeQueryId}</td>
+        <td>${ databaseQuery.clientIp}</td>
+        <td>${currentDateForm}</td>
+        <td> ${databaseQuery.zoneId != null ? databaseQuery.zoneId : "Not Found"}</td>
+        <td>${utcDateForm}</td>
+    </tbody>
+  </table>
                                 `;
         return currentTime;
     }
